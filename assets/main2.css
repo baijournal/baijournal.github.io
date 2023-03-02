@@ -1,0 +1,381 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Basic Type
+# Element Defaults
+  ## Nav
+  ## Structure
+  ## Elements
+# Page Agonistic Overrides
+  ## Structure
+  ## Elements
+# Page Specific Overrides
+  ## Structure
+  ## Elements
+# Responsive Layout
+--------------------------------------------------------------*/
+@font-face {
+  font-family: "MarrSansRegular";
+  src: url("../font/MarrSans-Regular.otf") format("opentype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "MarrSansRegularItalic";
+  src: url("./font/MarrSans-RegularItalic.otf") format("opentype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "RainerRegular";
+  src: url("./font/RainerTrial-Regular.otf") format("opentype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "RainerRegularSlanted";
+  src: url("./font/RainerTrial-RegularSlanted.otf") format("opentype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "BAIVariable";
+  src: url("./font/BAIVF.woff2") format("woff2-variations");
+  font-style: normal;
+}
+:root {
+  --orange: #FF5C00;
+  --orange-light: #FF8383;
+  --green: #00B167;
+  --blue: #5057FF;
+  --black: #1A1400;
+  --pad: 1.5rem;
+  --pad-large: 3rem;
+  --pad-medium: 2rem;
+  --pad-small: 1rem;
+  --pad-xsmall: 0.5rem;
+  --pad-xxsmall: 0.25rem;
+  --size-base: 18px;
+  --size-xxlarge: 9rem;
+  --size-xlarge: 4rem;
+  --size-large: 3rem;
+  --size-medium: 2.4rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/*
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Basic Type
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+*/
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "halyard-text", sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: "halyard-text", sans-serif;
+  font-weight: bold;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  line-height: 1;
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.15rem;
+}
+
+h1 {
+  font-size: var(--size-xxlarge);
+  line-height: 1;
+  letter-spacing: -0.2rem;
+}
+
+h1 {
+  font-family: "halyard-text", sans-serif;
+  font-size: var(--size-xxlarge);
+  font-weight: 100;
+}
+
+h2 {
+  font-family: "halyard-text", sans-serif;
+  font-size: var(--size-large);
+  font-weight: 700;
+}
+
+h3 {
+  font-family: "halyard-text", sans-serif;
+  font-size: var(--size-large);
+  font-weight: 100;
+}
+
+h4 {
+  margin-block-start: 1em;
+}
+
+a {
+  color: black;
+}
+
+/*
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Element Defaults
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+*/
+figure {
+  padding: 0;
+  margin: 0;
+}
+
+/* Structure
+ ========================================================================== */
+.row {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.row, .col, .item {
+  transition: flex 600ms ease-in-out;
+}
+
+.item {
+  flex: 1;
+  overflow: hidden;
+  max-height: 600px;
+  border: 1px solid black;
+  padding: var(--pad);
+  background-repeat: no-repeat;
+  mix-blend-mode: difference;
+}
+.item .summary {
+  max-width: 20em;
+}
+.item .summary .link {
+  border: solid 1px;
+  padding: 5px 8px;
+  text-decoration: none;
+  border-radius: 0.3rem;
+  margin-top: var(--pad-xsmall);
+  color: black;
+}
+
+#item-1 {
+  flex: 3;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+#item-1 h1 {
+  margin-top: -20px;
+  letter-spacing: -0.08em;
+  text-indent: -15px;
+}
+#item-1 .link {
+  font-size: 1rem;
+  border: none;
+  padding: 0;
+  text-decoration: underline;
+}
+#item-1 .link::before {
+  content: "";
+}
+#item-1 .subtitle {
+  font-weight: 800;
+}
+#item-1 .volume {
+  font-weight: 200;
+}
+
+.row-1 {
+  height: 110vh;
+}
+
+.row-2 .col-1 {
+  flex: 1;
+}
+.row-2 .col-1.expand {
+  flex: 3;
+}
+.row-2 .col-2 {
+  flex: 2;
+}
+
+.row-3 .col-1 {
+  flex: 2;
+}
+.row-3 .col-2 {
+  flex: 1;
+}
+.row-3 .col-2.expand {
+  flex: 3;
+}
+
+.thumb {
+  display: flex;
+  padding: 0;
+}
+.thumb .text {
+  flex: 1;
+  padding: var(--pad);
+}
+
+.thumb-right figure {
+  order: 2;
+}
+
+.bg {
+  color: white;
+}
+
+#item-8 h2, #item-8 h4 {
+  mix-blend-mode: difference;
+}
+
+figure {
+  flex: none;
+  display: block;
+  width: 300px;
+  height: 100%;
+  overflow: hidden;
+}
+
+img {
+  height: 100%;
+}
+
+.summary {
+  visibility: hidden;
+}
+
+.active {
+  flex: 4;
+}
+
+.active .summary {
+  visibility: visible;
+}
+
+/*
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Page Specific Overrides
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+*/
+nav {
+  position: absolute;
+  left: 20px;
+  top: 3px;
+}
+nav .logo {
+  position: absolute;
+  font-size: var(--size-medium);
+  font-weight: 700;
+  z-index: 100;
+}
+nav .logo a {
+  color: black;
+  text-decoration: none;
+}
+nav .breadcrumb {
+  position: absolute;
+  top: 20px;
+  width: 100vw;
+  text-align: center;
+  display: block;
+  color: #b44e4e;
+  font-weight: 600;
+}
+
+.page {
+  display: block;
+}
+.page .title {
+  max-width: 1500px;
+  margin: auto;
+  text-align: center;
+}
+.page .title figure {
+  padding: var(--pad-large) 0;
+  max-width: 770px;
+  margin: auto;
+}
+.page .title figure img {
+  width: 100%;
+}
+.page .title figure figcaption {
+  font-size: 0.8rem;
+  padding: var(--pad-xsmall) 0;
+  text-align: left;
+}
+.page .title .author {
+  padding-top: var(--pad-xsmall);
+}
+.page h1 {
+  text-align: center;
+  padding-top: 5vh;
+  font-size: var(--size-xlarge);
+  font-weight: 700;
+  max-width: 700px;
+  margin: auto;
+}
+.page .subtitle {
+  font-size: 1.2rem;
+  text-align: center;
+  padding-top: var(--pad);
+}
+.page .tags {
+  padding: var(--pad-xsmall) 0;
+}
+.page .tags span {
+  display: inline-block;
+  padding-right: 4px;
+  padding-left: 14px;
+  background-image: url("./img/ellipse.svg");
+  background-repeat: no-repeat;
+  background-position: 0 8px;
+  text-decoration: underline;
+  font-size: 1rem;
+}
+.page section {
+  line-height: 1.4;
+  max-width: 780px;
+  margin: auto;
+  padding: 4rem;
+  margin-top: 45vh;
+}
+.page header {
+  background: linear-gradient(140deg, #F3B9B9 0%, #FA814A 100%);
+  height: 70vh;
+}
+.page p {
+  font-weight: 300;
+  font-style: normal;
+  margin-bottom: 1em;
+  font-size: 1.2rem;
+}
+.page img {
+  width: 800px;
+  margin: auto;
+  display: block;
+}
+
+.page.about header {
+  height: auto;
+  background: none;
+}
+.page.about section {
+  margin-top: 0;
+}
+.page.about h3 {
+  font-size: var(--size-base);
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+/*# sourceMappingURL=main2.css.map */
