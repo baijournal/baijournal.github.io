@@ -102,6 +102,7 @@ h2 {
   font-family: "halyard-text", sans-serif;
   font-size: var(--size-large);
   font-weight: 100;
+  font-weight: 700;
 }
 
 h3 {
@@ -163,10 +164,6 @@ main {
   background: linear-gradient(140deg, #e0a4a4 0%, #FA814A 100%);
   cursor: pointer;
   transition: grid-column-end ease 0.2s;
-}
-
-[id^=item-]:not([id^=item-].bg):hover {
-  animation: color-flow 7s ease infinite;
 }
 
 [class^=w-], [class^=h-], .bg, .active {

@@ -114,6 +114,7 @@ Basic Type
         font-family: "halyard-text", sans-serif;
         font-size:  var(--size-large);
         font-weight: 100;
+        font-weight: 700;
     }
     h3 {
         font-family: "halyard-text", sans-serif;
@@ -184,7 +185,7 @@ figure {
 }
 
 [id^='item-']:not([id^='item-'].bg):hover {
-   animation: color-flow 7s ease infinite;
+//    animation: color-flow 7s ease infinite;
 }
 
 [class^='w-'], [class^='h-'], .bg, .active {
