@@ -1,0 +1,306 @@
+//sass --watch assets/main.scss:assets/main.css
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Basic Type
+# Element Defaults
+  ## Nav
+  ## Structure
+  ## Elements
+# Page Agonistic Overrides
+  ## Structure
+  ## Elements
+# Page Specific Overrides
+  ## Structure
+  ## Elements
+# Responsive Layout
+--------------------------------------------------------------*/
+
+@font-face {
+    font-family: "MarrSansRegular";
+    src: url("../font/MarrSans-Regular.otf") format("opentype");
+    font-style: normal;
+}
+@font-face {
+    font-family: "MarrSansRegularItalic";
+    src: url("./font/MarrSans-RegularItalic.otf") format("opentype");
+    font-style: normal;
+}
+@font-face {
+    font-family: "RainerRegular";
+    src: url("./font/RainerTrial-Regular.otf") format("opentype");
+    font-style: normal;
+}
+@font-face {
+    font-family: "RainerRegularSlanted";
+    src: url("./font/RainerTrial-RegularSlanted.otf") format("opentype");
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: "BAIVariable";
+    src: url("./font/BAI-s1VF.woff2") format("woff2-variations");
+    font-style: normal;
+}
+
+:root {
+    --orange: #FF5C00;
+    --orange-light: #FF8383;
+    --green: #00B167;
+    --blue: #5057FF;
+    --black: #1A1400;
+
+    --pad: 1.5rem;
+    --pad-large: 3rem;
+    --pad-medium: 2rem;
+    --pad-small: 1rem;
+    --pad-xsmall: 0.5rem;
+
+    --size-base: 18px; 
+    --size-xxlarge: 18rem;
+    --size-xlarge: 6rem;
+    --size-large: 5rem;
+    --size-medium: 4rem;
+    // --size-small: 0.8rem;
+    // --size-xsmall: 0.6rem;
+    // --size-xxsmall: 0.4rem;
+  }
+
+  * {
+    box-sizing: border-box;
+    transition: all ease .2s;
+  }
+  
+/*
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Basic Type
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+*/
+
+    body {
+        font-family: "MarrSansRegular", sans-serif;
+        padding: 0;
+        margin: 0;
+      
+    }
+
+    h1, h2, h3, h4 {
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
+    h1 {
+        font-family: "RainerRegular", sans-serif;
+        font-size:  var(--size-xxlarge);
+        line-height: 1;
+        letter-spacing: .2rem;
+    }
+    h1 {
+        --wght: 200;
+        --slnt: -12;
+        font-family: "BAIVariable", sans-serif;
+        font-variation-settings: 'wght' var(--wght), 'slnt' var(--slnt);
+        font-size:  var(--size-xxlarge);
+        line-height: 1;
+        letter-spacing: .2rem;
+        animation: flow 4s ease-in-out infinite;
+        color: white;
+    }
+    h2 {
+        font-family: "RainerRegular", sans-serif;
+        font-size:  var(--size-xlarge);
+        letter-spacing: .02em;
+        font-weight: 100;
+    }
+    h3 {
+        font-family: "RainerRegular", sans-serif;
+        font-size:  var(--size-large);
+        letter-spacing: .02em;
+        font-weight: 100;
+    }
+    
+
+/*
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Element Defaults
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+*/
+
+figure {
+    padding: 0;
+    margin: 0;
+}
+
+/* Structure
+ ========================================================================== */
+
+    [class^='section_'] {
+        position: absolute;
+        padding: 0;
+        min-height: 137px;
+        padding: var(--pad);
+        // border-bottom:#FA814A solid 1px;
+    }
+
+    [class^='section_'], 
+    [class^='section_'] figure{
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .section_1 {
+        top:0;
+        left:0;
+        width: 50vw;
+        height: 100vh;
+        background: linear-gradient(140deg, #F3B9B9 0%, #FA814A 100%);
+        padding: var(--pad) var(--pad-medium);
+    }
+
+    .section_2 {
+        top: 0;
+        left: 50vw;
+        width: 50vw;
+        height: 35vh;
+        color: white;
+        // background: linear-gradient(140deg, #F3B9B9 0%, #FA814A 100%);
+        background-image: url('./img/c-MadelineMorningstar__20220208COMMchoreorobot017_1660499139188.jpeg');
+        cursor:pointer;
+        background-position: -110px -20px;
+        background-size: 130%;
+
+    }
+    .section_3 {
+        top: 35vh;
+        left: 50vw;
+        width: 50vw;
+        height: 15vh;
+        background: linear-gradient(140deg, #F3B9B9 0%, #FA814A 100%);
+
+        // background: linear-gradient(180deg, #A1B6FF 0%, var(--blue) 100%);
+        cursor:pointer;
+
+    }
+    .section_4 {
+        top:50vh;
+        left:50vw;
+        width: 50vw;
+        height: 50vh;
+        background: linear-gradient(140deg, #F3B9B9 0%, #FA814A 100%);
+
+        // background: linear-gradient(140deg, #CFF1E3 0%, #1FBB7A 100%);
+        display: flex;
+        padding: 0;
+        cursor:pointer;
+
+        h2 {
+            font-size: var(--size-large);
+        }
+        .text {
+            padding: var(--pad);
+        }
+        figure{
+            width: 50vw;
+            height: 50vh;
+            background-image: url("./img/Danilo-Machado-headshot-by-Chanel-Matsunami-Gidrea-2.jpg");
+           
+        }
+
+    }
+  
+
+    .active-2 {
+        .section_1 {
+            width: 20vw;
+            height: 100vh;
+            h1 {
+                font-size: var(--size-xlarge);
+                letter-spacing: .02em;
+            }
+        }
+        .section_2 {
+            left: 20vw;
+            width: 80vw;
+            height: 70vh;
+            h2 {
+                font-size: calc(var(--size-xxlarge)*0.5);
+            }
+          
+        }
+        .section_3 {
+            top: 55vh;
+            left: 20vw;
+            width: 80vw;
+        }
+        .section_4 {
+            top: 70vh;
+            left: 20vw;
+            width: 80vw;
+            .text {
+                width: 80vw;
+            }
+            figure {
+                width: 20vw;
+                left: 80vw;
+                height: 30vh;
+            }
+        }
+
+    }
+
+    .active-4 {
+        .section_1 {
+            width: 20vw;
+            height: 40vh;
+            h1 {
+                font-size: var(--size-xlarge);
+                letter-spacing: .02em;
+            }
+        }
+        .section_2 {
+            top: 0;
+            left: 20vw;
+            width: 40vw;
+            height: 40vh;
+        }
+        .section_3 {
+            top: 0;
+            left: 60vw;
+            width: 40vw;
+            height: 40vh;
+        }
+        .section_4 {
+            top: 40vh;
+            left: 0vw;
+            width: 100vw;
+            height: 60vh;
+            h2 {
+                font-size: calc(var(--size-xlarge)*1.2);
+            }
+            .text {
+                width: 70vw;
+            }
+           figure{
+                width: 30vw;
+                height: 60vh;
+            }
+        }
+    }
+
+    @keyframes flow{
+        0%{
+           font-variation-settings: 'wght' 200, 'slnt' -12;
+        }
+        25%{
+           font-variation-settings: 'wght' 200, 'slnt' 0;
+        }
+        50%{
+           font-variation-settings: 'wght' 800, 'slnt' -12;
+        }
+        75%{
+           font-variation-settings: 'wght' 800, 'slnt' 0;
+        }
+    }

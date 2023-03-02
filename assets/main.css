@@ -1,0 +1,449 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Basic Type
+# Element Defaults
+  ## Nav
+  ## Structure
+  ## Elements
+# Page Agonistic Overrides
+  ## Structure
+  ## Elements
+# Page Specific Overrides
+  ## Structure
+  ## Elements
+# Responsive Layout
+--------------------------------------------------------------*/
+@font-face {
+  font-family: "MarrSansRegular";
+  src: url("../font/MarrSans-Regular.otf") format("opentype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "MarrSansRegularItalic";
+  src: url("./font/MarrSans-RegularItalic.otf") format("opentype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "RainerRegular";
+  src: url("./font/RainerTrial-Regular.otf") format("opentype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "RainerRegularSlanted";
+  src: url("./font/RainerTrial-RegularSlanted.otf") format("opentype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "BAIVariable";
+  src: url("./font/BAI-s1VF.woff2") format("woff2-variations");
+  font-style: normal;
+}
+:root {
+  --orange: #FF5C00;
+  --orange-light: #FF8383;
+  --green: #00B167;
+  --blue: #5057FF;
+  --black: #1A1400;
+  --pad: 1.5rem;
+  --pad-large: 3rem;
+  --pad-medium: 2rem;
+  --pad-small: 1rem;
+  --pad-xsmall: 0.5rem;
+  --pad-xxsmall: 0.25rem;
+  --size-base: 18px;
+  --size-xxlarge: 9rem;
+  --size-xlarge: 4rem;
+  --size-large: 3rem;
+  --size-medium: 2.4rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/*
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Basic Type
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+*/
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "halyard-text", sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: "halyard-text", sans-serif;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  line-height: 1;
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.15rem;
+}
+
+h1 {
+  font-size: var(--size-xxlarge);
+  line-height: 1;
+  letter-spacing: -0.2rem;
+}
+
+h1 {
+  font-family: "halyard-text", sans-serif;
+  font-size: var(--size-xxlarge);
+  font-weight: 100;
+}
+
+h2 {
+  font-family: "halyard-text", sans-serif;
+  font-size: var(--size-large);
+  font-weight: 100;
+}
+
+h3 {
+  font-family: "halyard-text", sans-serif;
+  font-size: var(--size-large);
+  font-weight: 100;
+}
+
+h4 {
+  margin-block-start: 1em;
+}
+
+/*
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Element Defaults
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+*/
+figure {
+  padding: 0;
+  margin: 0;
+}
+
+/* Structure
+ ========================================================================== */
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20vw, 1fr));
+  grid-auto-rows: minmax(20vh, 1fr);
+  min-height: 100vh;
+}
+
+[id^=item-] {
+  padding: 0;
+  padding: var(--pad);
+}
+
+[id^=item-],
+[id^=item-] figure {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+[id^=item-] {
+  background: linear-gradient(140deg, #e0a4a4 0%, #FA814A 100%);
+  cursor: pointer;
+  transition: grid-column-end ease 0.2s;
+}
+
+[class^=w-], [class^=h-], .bg, .active {
+  transition: grid-column-end ease 0.2s;
+}
+
+[id^=item-] .summery {
+  display: none;
+  max-width: 45vw;
+}
+[id^=item-] .summery .link {
+  border: solid 1px;
+  padding: 5px 8px;
+  text-decoration: none;
+  border-radius: 0.3rem;
+  margin-top: var(--pad-xsmall);
+  color: black;
+}
+
+[id^=item-].active .summery {
+  display: block;
+}
+
+[id^=item-].bg .summery .link {
+  color: white;
+}
+
+#item-8.active .summery {
+  mix-blend-mode: difference;
+  margin-top: 20px;
+}
+
+#item-1.active::before {
+  content: "MOVEMENT";
+}
+
+#item-1::before {
+  content: "M";
+  font-size: var(--size-xxlarge);
+  line-height: 0.7;
+  letter-spacing: -0.2rem;
+}
+
+#item-8 h2, #item-8 h4 {
+  mix-blend-mode: difference;
+}
+
+.w-1 {
+  grid-column-end: span 1;
+}
+
+.w-1 h2 {
+  font-size: var(--size-medium);
+  letter-spacing: -0.1rem;
+}
+
+.w-2 .text h2 {
+  font-size: var(--size-medium);
+  letter-spacing: -0.1rem;
+}
+
+.w-3.active h2,
+.w-4.active h2,
+.w-5.active h2 {
+  font-size: var(--size-xlarge);
+}
+.w-3.active .text h2,
+.w-4.active .text h2,
+.w-5.active .text h2 {
+  font-size: var(--size-large);
+}
+
+.w-4.active .text h2,
+.w-5.active .text h2 {
+  font-size: var(--size-xlarge);
+}
+
+.w-2 {
+  grid-column-end: span 2;
+}
+
+.w-3 {
+  grid-column-end: span 3;
+}
+
+.w-4 {
+  grid-column-end: span 4;
+}
+
+.w-5 {
+  grid-column-end: span 5;
+}
+
+.h-1 {
+  grid-row-end: span 1;
+}
+
+.h-2 {
+  grid-row-end: span 2;
+}
+
+.h-3 {
+  grid-row-end: span 3;
+}
+
+.h-4 {
+  grid-row-end: span 4;
+}
+
+.h-5 {
+  grid-row-end: span 5;
+}
+
+.r-1 {
+  grid-row-start: 1;
+}
+
+.r-2 {
+  grid-row-start: 2;
+}
+
+.r-3 {
+  grid-row-start: 3;
+}
+
+.r-4 {
+  grid-row-start: 4;
+}
+
+.r-10 {
+  grid-row-start: 10;
+}
+
+.r-11 {
+  grid-row-start: 11;
+}
+
+.c-1 {
+  grid-column-start: 1;
+}
+
+.c-2 {
+  grid-column-start: 2;
+}
+
+.c-4 {
+  grid-column-start: 4;
+}
+
+.c-5 {
+  grid-column-start: 5;
+}
+
+.thumb {
+  background-position: 60% 0px;
+  display: flex;
+  padding: 0;
+  cursor: pointer;
+}
+.thumb h2 {
+  font-size: var(--size-large);
+}
+.thumb .text {
+  padding: var(--pad);
+  width: 25vw;
+}
+.thumb figure {
+  width: 25vw;
+}
+
+.bg {
+  color: white;
+  background-size: 100% auto;
+}
+.bg .link {
+  color: white;
+}
+
+[id^=item-].w-4 .text {
+  width: 70vw;
+}
+[id^=item-].w-4 figure {
+  width: 30vw;
+}
+
+[id^=item-].w-3 .text {
+  width: 50vw;
+}
+[id^=item-].w-3 figure {
+  width: 25vw;
+}
+
+@keyframes flow {
+  0% {
+    font-variation-settings: "wght" 200, "slnt" -12;
+  }
+  25% {
+    font-variation-settings: "wght" 200, "slnt" 0;
+  }
+  50% {
+    font-variation-settings: "wght" 800, "slnt" -12;
+  }
+  75% {
+    font-variation-settings: "wght" 800, "slnt" 0;
+  }
+}
+/*
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Page Specific Overrides
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+*/
+nav {
+  position: absolute;
+  left: 20px;
+  top: 3px;
+  font-size: var(--size-medium);
+  font-weight: 700;
+}
+
+main.page {
+  display: block;
+}
+main.page .title {
+  max-width: 1500px;
+  margin: auto;
+  text-align: center;
+}
+main.page .title figure {
+  padding: var(--pad-large) 0;
+  max-width: 770px;
+  margin: auto;
+}
+main.page .title figure img {
+  width: 100%;
+}
+main.page .title figure figcaption {
+  font-size: 0.8rem;
+  padding: var(--pad-xsmall) 0;
+  text-align: left;
+}
+main.page .title .author {
+  padding-top: var(--pad-xsmall);
+}
+main.page h1 {
+  text-align: center;
+  padding-top: 5vh;
+  font-size: var(--size-xlarge);
+  font-weight: 700;
+  max-width: 700px;
+  margin: auto;
+}
+main.page .subtitle {
+  font-size: 1.2rem;
+  text-align: center;
+  padding-top: var(--pad);
+}
+main.page .tags {
+  padding: var(--pad-xsmall) 0;
+}
+main.page .tags span {
+  display: inline-block;
+  padding-right: 4px;
+  padding-left: 14px;
+  background-image: url("./img/ellipse.svg");
+  background-repeat: no-repeat;
+  background-position: 0 8px;
+  text-decoration: underline;
+  font-size: 1rem;
+}
+main.page section {
+  line-height: 1.4;
+  max-width: 780px;
+  margin: auto;
+  padding: 4rem;
+  margin-top: 45vh;
+}
+
+.page * {
+  margin: 0;
+  padding: 0;
+}
+.page p {
+  font-weight: 300;
+  font-style: normal;
+  margin-bottom: 1em;
+  font-size: 1.2rem;
+}
+.page .page header {
+  background: linear-gradient(140deg, #F3B9B9 0%, #FA814A 100%);
+  height: 70vh;
+}
+.page img {
+  width: 800px;
+  margin: auto;
+  display: block;
+}
+
+/*# sourceMappingURL=main.css.map */

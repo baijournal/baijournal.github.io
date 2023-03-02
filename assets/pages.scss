@@ -1,0 +1,98 @@
+nav {
+    position: absolute;
+   
+    left: 20px;
+    top: 3px;
+    font-size: var(--size-medium);
+    font-weight: 700;
+}
+
+main.page {
+    display :block;
+   .title {
+        max-width: 1500px;
+        margin: auto;
+        text-align: center;
+        figure {
+            padding: var(--pad-large) 0;
+            max-width: 770px;
+            margin: auto;
+            img {
+                width: 100%;
+            }
+            figcaption {
+                font-size: .8rem;
+                padding: var(--pad-xsmall) 0;
+                text-align:left;
+            }
+        }
+        .author {
+            padding-top: var(--pad-xsmall);
+        }
+    }
+    
+    h1{
+        text-align: center;
+        padding-top: 5vh;
+        font-size: var(--size-xlarge);
+        font-weight: 700;
+        max-width: 700px;
+       margin: auto;
+       
+      }
+      .subtitle{
+        font-size:  1.2rem;
+        text-align: center;
+        padding-top: var(--pad);
+      }
+
+      .tags {
+        padding: var(--pad-xsmall) 0;
+        span {
+            display: inline-block;
+                    padding-right: 4px;
+                    padding-left: 14px;
+                    background-image: url("./img/ellipse.svg");
+                    background-repeat: no-repeat;
+                    background-position: 0 8px;
+                    text-decoration: underline;
+                    font-size: 1rem;
+                }
+    }
+    section{
+        line-height: 1.4;
+        max-width: 780px;
+        margin: auto;
+        padding: 4rem;
+        margin-top: 45vh;
+      }
+}
+
+
+
+
+.page {
+
+    *{
+        margin: 0;
+        padding: 0;
+      }
+     
+      p{
+        font-weight: 300;
+        font-style: normal;
+        margin-bottom: 1em;
+        font-size: 1.2rem;
+      }
+      .page header{
+        background: linear-gradient(140deg, #F3B9B9 0%, #FA814A 100%);
+        height: 70vh;
+      }
+     
+   
+      img{
+        width: 800px;
+        margin: auto;
+        display: block;        
+      }
+}
