@@ -146,11 +146,16 @@ figure {
   transition: flex 600ms ease-in-out;
 }
 
+[id^=item-] {
+  background: linear-gradient(140deg, #e0a4a4 0%, #FA814A 100%);
+  cursor: pointer;
+  transition: all ease 0.2s;
+}
+
 .item {
   flex: 1;
   overflow: hidden;
   max-height: 600px;
-  border: 1px solid black;
   padding: var(--pad);
   background-repeat: no-repeat;
   mix-blend-mode: difference;
